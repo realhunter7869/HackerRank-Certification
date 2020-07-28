@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/python3
 
 import math
 import os
@@ -23,14 +23,14 @@ class Circle:
     def area(self):
         return (math.pi * r * r)
 
-
-if __name__ == '__main__':
+        
+if __name__ == '__main__':  
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
-    q = int(raw_input())
+    q = int(input())
     queries = []
-    for _ in xrange(q):
-        args = raw_input().split()
-        shape_name, params = args[0], map(int, args[1:])
+    for _ in range(q):
+        args = input().split()
+        shape_name, params = args[0], tuple(map(int, args[1:]))
         if shape_name == "rectangle":
             a, b = params[0], params[1]
             shape = Rectangle(a, b)
